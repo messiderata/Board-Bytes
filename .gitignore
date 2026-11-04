@@ -1,0 +1,21 @@
+# Generated output and local tooling
+/dist/
+/node_modules/
+/.wrangler/
+/Board-and-Bytes.html
+__pycache__/
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Previous local prototype and original design archives
+/dashboard/
+/projects/
+/*.png
+/*.svg
+
+# Local assistant and provider settings
+/.agents/
+/.codex/
+/.aws/
