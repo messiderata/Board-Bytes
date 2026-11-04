@@ -8,6 +8,8 @@ paths=set(re.findall(r'(?:src|href)="([^"#]+\.(?:png|jpg|jpeg))"',html))
 paths.update(f'projects/led-{board}-{side}.png' for board in ('driver','carrier') for side in ('front','back'))
 assets={p:'data:'+mimetypes.guess_type(p)[0]+';base64,'+base64.b64encode((root/p).read_bytes()).decode() for p in paths}
 html=html.replace('<link rel="stylesheet" href="style.css">','<style>'+css+'</style>')
+favicon='data:image/svg+xml;base64,'+base64.b64encode((root/'favicon.svg').read_bytes()).decode()
+html=html.replace('href="favicon.svg"', 'href="'+favicon+'"')
 # Embed each asset once; initialize image and preview links from the asset map.
 html=re.sub(r'src="([^"#]+\.(?:png|jpg|jpeg))"',r'data-embedded-src="\1"',html)
 js=js.replace('const path = `projects/led-${board}-${side}.png`;','const path = embeddedImages[`projects/led-${board}-${side}.png`];')
