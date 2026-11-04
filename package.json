@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Board & Bytes portfolio for Cloudflare Pages",
-  "engines": { "node": ">=22" },
+  "description": "Board & Bytes portfolio for Cloudflare Workers Static Assets",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "check": "node --check public/projects.js && node scripts/check.mjs",
     "build": "npm run check && node scripts/build.mjs",

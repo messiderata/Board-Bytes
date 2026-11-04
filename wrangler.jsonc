@@ -1,5 +1,10 @@
 {
   "name": "board-and-bytes",
-  "pages_build_output_dir": "./dist",
-  "compatibility_date": "2026-11-04"
+  "compatibility_date": "2026-11-04",
+  "build": {
+    "command": "npm run build"
+  },
+  "assets": {
+    "directory": "./dist"
+  }
 }
